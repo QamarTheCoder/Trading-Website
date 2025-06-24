@@ -7,10 +7,8 @@ import Navbar from '../Navbar'
 function PricingPage() {
     return ( 
         <>
-            <Navbar/>
             <Hero/>
             <Brokerage/>
-            <Footer/>
         </>
      );
 }

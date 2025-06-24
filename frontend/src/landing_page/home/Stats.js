@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 function Stats() {
     return (  
@@ -19,7 +20,7 @@ function Stats() {
                     <img style={{width:'85%'}} src='media/ecosystem.png'/>
                     <div >
                         <a style={{textDecoration:'none', marginRight:'2rem'}} href='#'>Explore our products ➡</a>
-                        <a style={{textDecoration:'none'}} href='#'>Try Kite</a>
+                        <Link style={{textDecoration:'none'}} to='/'>Try Kite</Link>
                     </div>
                 </div>
             </div>
