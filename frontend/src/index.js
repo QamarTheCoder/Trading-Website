@@ -11,6 +11,8 @@ import {BrowserRouter, Routes, Route} from 'react-router-dom'
 import Navbar from './landing_page/Navbar';
 import Footer from './landing_page/Footer';
 import Notfound from './landing_page/Notfound';
+import 'react-toastify/dist/ReactToastify.css'
+import Login from './landing_page/login/Login';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -20,6 +22,7 @@ root.render(
     <Routes>
       <Route path='/' element={<HomePage/>}/>
       <Route path='/signup' element={<Signup/>}/>
+      <Route path='/login' element={<Login/>}/>
       <Route path='/products' element={<ProductPage/>}/>
       <Route path='/pricing' element={<PricingPage/>}/>
       <Route path='/about' element={<AboutPage/>}/>

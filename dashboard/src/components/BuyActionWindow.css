@@ -1,0 +1,19 @@
+.container{
+    width: 35%;
+}
+
+.inputs{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.buttons{
+    margin-top: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+.buttons span link{
+    margin: 5px;
+}

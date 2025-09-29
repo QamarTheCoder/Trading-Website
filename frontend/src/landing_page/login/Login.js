@@ -3,10 +3,9 @@ import axios from 'axios'
 import { Link, useNavigate  } from 'react-router-dom';
 import {ToastContainer, toast} from 'react-toastify'
 
-function Signup() {
+function Login() {
     const navigate = useNavigate();
     const [email,setEmail]=useState("")
-    const [username,setUsername]=useState("")
     const [password,setPassword]=useState("")
 
 
@@ -15,13 +14,12 @@ function Signup() {
     }
 
     const handleError=(err)=>{
-        toast.error(err,{position:'top-right'})
+        toast.error(err,{position:"top-right"})
     }
     const handleOnClick= async (e)=>{
         e.preventDefault()
-        const {data}= await axios.post('http://localhost:2020/signup',{
+        const {data}= await axios.post('http://localhost:2020/login',{
             email:email,
-            username:username,
             password:password
         },
         {withCredentials:true}
@@ -32,6 +30,7 @@ function Signup() {
         handleSuccess(message);
         setTimeout(()=>{
             window.location.href="http://localhost:3001/"
+
         },1000)
     }else{
         handleError(message)
@@ -40,6 +39,7 @@ function Signup() {
     }
     
   return (
+    
     <div className="d-flex justify-content-center mt-5 ">
         <ToastContainer />
       <div className="card p-4" style={{ width: "400px" }}>
@@ -50,10 +50,6 @@ function Signup() {
               <label htmlFor="email" className="form-label">Email address</label>
               <input type="email" className="form-control" id="email" placeholder="name@example.com" value={email} onChange={(e)=>{setEmail(e.target.value)}}/>
             </div>
-            <div className="col">
-              <label htmlFor="name" className="form-label">Username</label>
-              <input type="text" className="form-control" id="name" placeholder="John Doe" value={username} onChange={(e)=>{setUsername(e.target.value)}}/>
-            </div>
           </div>
 
           <div className="mb-3">
@@ -62,13 +58,13 @@ function Signup() {
           </div>
 
           <div className="d-grid">
-            <button className="btn btn-outline-primary" onClick={handleOnClick}>Signup</button>
+            <button className="btn btn-outline-primary" onClick={handleOnClick}>Login</button>
           </div>
-          <p className='mt-3 text-center'>Already have an Account? <Link to={"/login"} style={{textDecoration:'none'}} >Login</Link></p>
+          <p className='mt-3 text-center'>Don't have an Account? <Link to={"/signup"} style={{textDecoration:'none'}} >Signup</Link></p>
         </form>
       </div>
     </div>
   );
 }
 
-export default Signup;
+export default Login;

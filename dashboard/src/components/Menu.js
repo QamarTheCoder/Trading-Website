@@ -1,6 +1,6 @@
 import React , {useState} from "react";
 import { Link } from "react-router-dom";
-
+import { useCookies } from "react-cookie";
 const Menu = () => {
   const[isMenuItemSelected,setIsMenuItemSelected]=useState(0);
   const[isprofileclicked,setIsprofileclicked]=useState(false);
@@ -9,8 +9,10 @@ const Menu = () => {
     setIsMenuItemSelected(index);
   }
   const handleProfileclicked=(index)=>{
-    setIsprofileclicked(!isprofileclicked)
-  }
+    setIsprofileclicked(!isprofileclicked) 
+  
+    }
+  
   const menuClass='menu';
   const ActivemenuClass='menu selected';
   return (
