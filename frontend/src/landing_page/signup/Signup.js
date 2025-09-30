@@ -44,7 +44,7 @@ function Signup() {
         <ToastContainer />
       <div className="card p-4" style={{ width: "400px" }}>
         <h3 className="text-center mb-4">Signup</h3>
-        <form>
+        <form aria-label="signup form">
           <div className="row mb-3">
             <div className="col">
               <label htmlFor="email" className="form-label">Email address</label>
